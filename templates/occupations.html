@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content1 %}
+<p>
+    This is the occupations page. Below you will find a table of 
+    occupations along with a randomly selected occupation.
+</p>
+<hr>
+<h2>Occupations</h2>
+<table style="margin: 0 auto; text-align: left; border: 1px solid black;">
+    <tr style="border: 1px solid black;">
+        <th>Job Class</th>
+        <th>Percentage</th>
+    </tr>
+    {% for row in dic %}
+    <tr>
+        {% for thing in row %}
+        <td>{{ thing }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    <tr style="font-weight: bolder;">
+        <td style="border-top: 1px solid black;">Total</td>
+        <td style="border-top: 1px solid black;">99.8</td>
+    </tr>
+</table>
+<hr>
+<h3>Randomly Generated Occupation: {{ rand }}</h3>
+{% endblock %}
