@@ -2,16 +2,20 @@
 
 <html>
     <head>
+        <!-- Descriptive Title -->
         <title>My Occupation is Jinja</title>
     </head>
+    <!-- Centers everything in the body on the page -->
     <body style="text-align: center;">
         <p>
-            {% block content1 %}
+            <!-- Everything within this block changes when on another page. -->
+            {% block bodycontent %}
             <p>
                 This is the homepage. Click the link below to access the occupations table page.
             </p>
             {% endblock %}
             <hr>
+            <!-- Simple navigation bar -->
             <h3>Navigation</h3>
             <h4>
                 <a href="./">Home</a> |

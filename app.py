@@ -9,7 +9,7 @@ def root():
 
 @app.route("/occupations")
 def occupy():
-    occ_float_dic = occ_dictionary.dictionary()
+    occ_float_dic = occ_dictionary.csv_to_float_dic()
     per_chance = occ_rand_gen.percent_chance(occ_float_dic)
     return render_template('occupations.html', dic=occ_float_dic.items(), rand=per_chance)
 

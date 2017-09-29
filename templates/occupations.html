@@ -1,29 +1,39 @@
 {% extends 'index.html' %}
 
-{% block content1 %}
+<!-- This part replaces the homepage block content -->
+{% block bodycontent %}
 <p>
     This is the occupations page. Below you will find a table of 
     occupations along with a randomly selected occupation.
 </p>
 <hr>
 <h2>Occupations</h2>
+<!-- Table tag with styling to center it, align the text to the left,
+     and create a simple border to outline it -->
 <table style="margin: 0 auto; text-align: left; border: 1px solid black;">
+    <!-- Headers for the table -->
     <tr style="border: 1px solid black;">
         <th>Job Class</th>
         <th>Percentage</th>
     </tr>
+    <!-- Goes through the dictionary -->
     {% for row in dic %}
     <tr>
-        {% for thing in row %}
-        <td>{{ thing }}</td>
+        <!-- For every value in each row of the dictionary -->
+        {% for value in row %}
+        <!-- Put that value into a cell of the table -->
+        <td>{{ value }}</td>
         {% endfor %}
     </tr>
     {% endfor %}
+    <!-- Differentiates the total at the end from the rest of the data -->
     <tr style="font-weight: bolder;">
         <td style="border-top: 1px solid black;">Total</td>
         <td style="border-top: 1px solid black;">99.8</td>
     </tr>
 </table>
 <hr>
+<!-- Displays the randomly generated occupation from the function 
+     ran in app.py and imported from occ_rand_gen.py -->
 <h3>Randomly Generated Occupation: {{ rand }}</h3>
 {% endblock %}
